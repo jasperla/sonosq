@@ -50,7 +50,6 @@ class SonosQ
         retried += 1
         retry
       else
-        print "Warning, failed to queue: #{sonos_id}"
         retried = 0;
       end
     end
