@@ -27,6 +27,13 @@ Caveats
     to be handled separatly. Currently `SonosQ` only handles Spotify files,
 	support for locally stored or Rdio entries will be added later.
 
+ToDo
+----
+
+  - Turn this into a reuseable library with a the CLI part split off.
+  - Handle non-Spotify items.
+  - Build a Ruby gem.
+
 License
 -------
 
