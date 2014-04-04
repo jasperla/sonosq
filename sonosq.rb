@@ -8,14 +8,12 @@ require 'sonos'
 class SonosCLI < Thor
   desc 'append FROM TO', 'append queue'
   def append(from, to)
-    s = SonosQ.new
-    s.queue_mgr('append', from, to)
+    SonosQ.new.queue_mgr('append', from, to)
   end
 
   desc 'replace FROM to', 'replace queue'
   def replace(from, to)
-    s = SonosQ.new
-    s.queue_mgr('replace', from, to)
+    SonosQ.new.queue_mgr('replace', from, to)
   end
 end
 
@@ -48,7 +46,8 @@ class SonosQ
         retried += 1
         retry
       else
-        retried = 0;
+        # Just give up on this track and skip it.
+        retried = 0
       end
     end
   end
