@@ -20,8 +20,6 @@ class SonosCLI < Thor
 end
 
 class SonosQ
-  attr_reader :speakers
-
   def initialize
     system = Sonos::System.new
     @speakers = system.speakers
@@ -67,7 +65,6 @@ class SonosQ
       # XXX: Add support for non-Spotify (local and Rdio) tracks.
       if id =~ /x-sonos-spotify/
         sonos_id = id.match(/^.*track%3a(.*?)\?sid/)[1]
-        retried = 0
 
         add_to_queue { to_speaker.add_spotify_to_queue({:id => sonos_id, :region => 'NL'}) }
       end
