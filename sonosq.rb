@@ -28,10 +28,6 @@ class SonosQ
     @speakers.select { |s| s.name.downcase == speaker.downcase }.shift
   end
 
-  def get_queue_for(speaker)
-    self.get_speaker(speaker).queue
-  end
-
   def get_queue(speaker)
     speaker.queue.fetch(:items)
   end
